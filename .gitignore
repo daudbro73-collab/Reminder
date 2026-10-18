@@ -1,0 +1,27 @@
+server/data/
+dist/
+.DS_Store
+*.log
+.env
+.env.local
+.env.*.local
+
+# Capacitor native builds
+android/.gradle/
+android/app/build/
+android/build/
+android/local.properties
+ios/App/Pods/
+ios/App/build/
+ios/DerivedData/
+
+# Signing secrets — never commit
+*.keystore
+*.jks
+google-services.json
+GoogleService-Info.plist
+
+# IDE
+.idea/
+*.xcuserstate
+xcuserdata/

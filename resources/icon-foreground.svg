@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1b4332"/>
+      <stop offset="55%" stop-color="#2d6a4f"/>
+      <stop offset="100%" stop-color="#40916c"/>
+    </linearGradient>
+    <linearGradient id="barGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#74c69d"/>
+      <stop offset="100%" stop-color="#d8f3dc"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0d2818" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <rect x="220" y="692" width="88" height="88" rx="44" ry="44"
+    fill="url(#barGrad)" filter="url(#shadow)"/>
+  <rect x="344" y="604" width="88" height="176" rx="44" ry="44"
+    fill="url(#barGrad)" filter="url(#shadow)"/>
+  <rect x="468" y="516" width="88" height="264" rx="44" ry="44"
+    fill="url(#barGrad)" filter="url(#shadow)"/>
+  <rect x="592" y="428" width="88" height="352" rx="44" ry="44"
+    fill="url(#barGrad)" filter="url(#shadow)"/>
+  <rect x="716" y="340" width="88" height="440" rx="44" ry="44"
+    fill="url(#barGrad)" filter="url(#shadow)"/>
+</svg>
