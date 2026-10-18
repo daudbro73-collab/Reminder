@@ -1,146 +1,137 @@
 <div align="center">
+  <h1>🕌 Muzakkir — مزكر</h1>
+  <p><strong>Offline-first Islamic life tracker · PWA + iOS + Android · Prayer times, Quran, dhikr, habits</strong></p>
 
-# 🕌 Muzakkir — Muslim Life Balance Tracker
+  [![React](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev)
+  [![Vite](https://img.shields.io/badge/Vite-6-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev)
+  [![Capacitor](https://img.shields.io/badge/Capacitor-7-119EFF?style=flat-square&logo=capacitor&logoColor=white)](https://capacitorjs.com)
+  [![PWA](https://img.shields.io/badge/PWA-offline--first-5A0FC8?style=flat-square)](https://web.dev/progressive-web-apps)
+  [![Platforms](https://img.shields.io/badge/platforms-Web_·_iOS_·_Android-lightgrey?style=flat-square)](https://capacitorjs.com)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-22c55e?style=flat-square)](LICENSE)
 
-**A PWA + native mobile app for prayer times, Quran, dhikr, habits and daily life balance**
-
-[![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev)
-[![Vite](https://img.shields.io/badge/Vite-6-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev)
-[![Capacitor](https://img.shields.io/badge/Capacitor-7-119EFF?style=for-the-badge&logo=capacitor&logoColor=white)](https://capacitorjs.com)
-[![PWA](https://img.shields.io/badge/PWA-Ready-5A0FC8?style=for-the-badge&logo=pwa&logoColor=white)](https://web.dev/progressive-web-apps)
-[![License: MIT](https://img.shields.io/badge/License-MIT-22c55e?style=for-the-badge)](LICENSE)
-
-[🌐 Web App (PWA)](#) · [📱 Android APK](#) · [🍎 iOS App](#) · [📖 Deploy Guide](DEPLOY.md)
-
+  **🇷🇺 RU · 🇬🇧 EN · 🇸🇦 AR (RTL) · 🇪🇸 ES**
 </div>
 
 ---
 
-## 📋 Overview
+## What Is Muzakkir?
 
-**Muzakkir** (Arabic: مزكر — "The Reminder") is a comprehensive Islamic life tracker that helps Muslims maintain balance across all spheres of life. Built as an **offline-first PWA** with native iOS and Android support via Capacitor.
+**Muzakkir** (Arabic: مزكر — "The Reminder") is a comprehensive Islamic lifestyle app that helps Muslims track the four spheres of a balanced life: physical, intellectual, spiritual, and financial.
 
-> 🌍 Available in 4 languages: 🇷🇺 Russian · 🇬🇧 English · 🇸🇦 Arabic (RTL) · 🇪🇸 Spanish
-
----
-
-## ✨ Features
-
-### 🕌 Prayer & Spirituality
-- **Accurate prayer times** via Aladhan API (auto-detects location)
-- **Push notifications** for each prayer with customizable alerts
-- **Quran reader** with tajweed highlighting and bookmarks
-- **Morning / Afternoon / Evening Dhikr** with taslim counter
-
-### 📊 Life Balance Dashboard
-
-| Sphere | What It Tracks |
-|--------|---------------|
-| 🏃 **Physical** | Exercise habits, sleep, nutrition |
-| 🧠 **Intellectual** | Reading, learning, skill development |
-| 🕌 **Spiritual** | Prayer, Quran, dhikr, fasting |
-| 💰 **Financial** | Savings goals, spending habits |
-
-### ⚙️ More Features
-- **Muzakkir reminders** — customizable Islamic reminders with taslim
-- **Bad habit tracker** — monitor and eliminate harmful patterns
-- **Offline-first** — works without internet (localStorage sync)
-- **RTL support** — native Arabic right-to-left layout
+It runs as an **installable PWA** in the browser and as a **native app** on iOS and Android (via Capacitor 7) — with full **offline support** since all data lives in localStorage. No account required, no data leaves the device.
 
 ---
 
-## 📱 Platform Support
+## Core Modules
 
-| Platform | Status | Build Command |
-|----------|--------|--------------|
-| 🌐 PWA (Web) | ✅ Ready | `npm run deploy:pwa` |
-| 🤖 Android | ✅ Ready | `npm run build:apk:debug` |
-| 🍎 iOS | ✅ Ready | Xcode required |
+### 🕌 Prayer Times
+- Auto-detects location and fetches accurate prayer times (Aladhan API)
+- Push notifications for Fajr, Dhuhr, Asr, Maghrib, Isha
+- Qibla direction indicator
+- Countdown to next prayer
+
+### 📖 Quran & Dhikr
+- Full Mushaf with tajweed color coding
+- Bookmark and reading progress tracking
+- Morning / afternoon / evening adhkar with tasbih counter
+- Muzakkir reminders — customizable notifications with taslim wording
+
+### 🏋️ Life Balance Dashboard
+| Sphere | Tracks |
+|--------|--------|
+| 🏃 Physical | Workout log, sleep hours, water intake, step goals |
+| 🧠 Intellectual | Books read, learning hours, skills practiced |
+| 🕌 Spiritual | Prayers completed, Quran pages, fasting days |
+| 💰 Financial | Savings target progress, daily expense log |
+
+### 📵 Habit Tracker
+- Define bad habits to eliminate (smoking, social media, etc.)
+- Streak counter with streak-break recovery flow
+- Weekly heatmap view
 
 ---
 
-## 🚀 Quick Start
+## Platform Support
+
+| Platform | Status | Notes |
+|----------|:------:|-------|
+| 🌐 Web (PWA) | ✅ | Installable, push notifications via VAPID |
+| 🤖 Android | ✅ | Debug APK via Gradle; release via Android Studio |
+| 🍎 iOS | ✅ | Xcode 15+ required; see [DEPLOY-IOS.md](DEPLOY-IOS.md) |
+
+---
+
+## Quick Start
 
 ```bash
 git clone https://github.com/daudbro73-collab/Reminder.git
 cd Reminder
 npm install
-npm run dev
+npm run dev          # client: :5173  +  API proxy: :3001
 ```
 
-| URL | Service |
-|-----|---------|
-| `http://localhost:5173` | React client app |
-| `http://localhost:3001` | Express API proxy |
-
-### Production build
+### Build Targets
 
 ```bash
-npm run deploy:pwa         # PWA → dist/ (with verification)
-npm run build:apk:debug    # Android debug APK (JDK 17 + Android SDK required)
-npm run build:native       # Capacitor sync (Android + iOS)
+# PWA (web) — outputs to dist/
+npm run deploy:pwa
+
+# Android debug APK (requires JDK 17 + Android SDK)
+npm run build:apk:debug
+
+# Capacitor sync for iOS/Android after source change
+npm run build:native
+
+# Generate VAPID keys for Web Push
+npm run generate:vapid
 ```
 
-See full instructions in [DEPLOY.md](DEPLOY.md).
+Full deployment instructions: [DEPLOY.md](DEPLOY.md) · [DEPLOY-IOS.md](DEPLOY-IOS.md)
 
 ---
 
-## 🏗️ Project Structure
+## Architecture
 
 ```
 Muzakkir/
-├── src/                    # React application
+├── src/                      # React 18 application
+│   ├── screens/              # Full-page views (Prayer, Quran, Dashboard…)
+│   ├── components/           # Shared UI components
+│   ├── hooks/                # usePrayer, useHabits, useBalance…
+│   └── i18n/                 # Translation strings (RU/EN/AR/ES)
 ├── server/
-│   ├── index.js            # Express API proxy
-│   ├── pushService.js      # Web Push notifications
-│   ├── prayerService.js    # Prayer time logic
-│   └── morningChecklist.js # Daily checklist
+│   ├── index.js              # Express proxy server (dev only)
+│   ├── prayerService.js      # Aladhan API wrapper + caching
+│   ├── pushService.js        # Web Push (VAPID) notification sender
+│   └── morningChecklist.js   # Scheduled morning checklist push
 ├── shared/
-│   └── prayerService.js    # Shared client+server logic
-├── ios/                    # Capacitor iOS project (Xcode)
-├── android/                # Capacitor Android project
-├── dist/                   # Built PWA output
-├── resources/              # Icons & splash screens
-├── capacitor.config.json
-├── vite.config.js
-├── DEPLOY.md
-└── DEPLOY-IOS.md
+│   └── prayerService.js      # Isomorphic prayer logic (client + server)
+├── ios/App/                  # Capacitor Xcode project
+├── android/                  # Capacitor Gradle project
+├── resources/                # App icons, splash screens (all sizes)
+├── dist/                     # PWA build output (served statically)
+├── capacitor.config.json     # appId: com.muzakkir.app
+└── vite.config.js            # Vite + vite-plugin-pwa config
 ```
 
 ---
 
-## 💡 Tech Stack
+## Tech Stack
 
-| Layer | Technology |
-|-------|-----------|
-| UI | React 18 + Vite 6 |
-| Native | Capacitor 7 (iOS + Android) |
-| PWA | vite-plugin-pwa |
-| Push | Web Push API (VAPID keys) |
-| Prayer Times | Aladhan API |
-| Server | Express.js (optional proxy) |
-| Storage | localStorage (offline-first) |
-| i18n | Custom i18n (RU/EN/AR/ES) |
-
----
-
-## 📜 Scripts
-
-```bash
-npm run dev               # Dev server (client + API)
-npm run build             # Web build
-npm run deploy:pwa        # Build + verify PWA
-npm run build:apk:debug   # Android APK (debug)
-npm run generate:vapid    # Generate VAPID push keys
-npm test                  # Run tests
-```
+| | Technology | Role |
+|-|------------|------|
+| ⚛️ | React 18 | UI framework |
+| ⚡ | Vite 6 | Dev server + bundler |
+| 📱 | Capacitor 7 | iOS + Android native bridge |
+| 🔔 | vite-plugin-pwa + VAPID | PWA + push notifications |
+| 🕌 | Aladhan API | Prayer time calculations |
+| 🌐 | Express.js | Dev-mode API proxy + push sender |
+| 🗄️ | localStorage | Offline-first data persistence |
+| 🌍 | Custom i18n | 4 languages, RTL support for Arabic |
 
 ---
 
 <div align="center">
-
-Built with ❤️ and بسم الله by **Rustam Berheev**
-
-[![GitHub](https://img.shields.io/badge/GitHub-daudbro73--collab-181717?style=flat-square&logo=github)](https://github.com/daudbro73-collab)
-
+  <strong>Built by Rustam Berheev</strong><br/>
+  <a href="https://github.com/daudbro73-collab">github.com/daudbro73-collab</a>
 </div>
